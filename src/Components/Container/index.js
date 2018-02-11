@@ -4,7 +4,6 @@ import { Title, cardStyle, amount, btn, bottomContainer } from "./styles";
 class Container extends Component {
   render() {
     let products = null;
-
     if (JSON.parse(localStorage.getItem("productCart"))) {
       products = JSON.parse(localStorage.getItem("productCart")).productsItem;
     }

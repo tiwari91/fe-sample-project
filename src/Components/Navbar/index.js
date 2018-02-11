@@ -57,9 +57,9 @@ class Navbar extends Component {
   render() {
     let cartCountItems = 0;
     let dictObject = JSON.parse(localStorage.getItem("cartDict"));
-    let cartItems = JSON.parse(localStorage.getItem("productCart"))[
+    let cartItems = JSON.parse(localStorage.getItem("productCart"))? JSON.parse(localStorage.getItem("productCart"))[
       "productsItem"
-    ];
+    ]: null;
     let totalPrice = 0;
 
     if (dictObject) {

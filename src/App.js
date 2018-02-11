@@ -15,7 +15,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+  loadData = () => {
     let modProd = products["products"].map((product, i) => {
       product.Id = i;
       return product;
@@ -23,7 +23,8 @@ class App extends Component {
     let productItems = {};
     productItems.productsItem = modProd;
     localStorage.setItem("productCart", JSON.stringify(productItems));
-  }
+  };
+  componentDidMount() {}
 
   updateCartCount = (product, id) => {
     this.setState(
@@ -51,6 +52,8 @@ class App extends Component {
   };
 
   render() {
+    this.loadData();
+
     return (
       <div>
         <Navbar />
